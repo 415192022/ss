@@ -40,7 +40,6 @@ public class MainApplication {
         });
 
         post("/v1/manufacture/qqiot", (request, response) -> "");
-
         //API结束-----------------------------------------------------------------------
 
         //全局后处理
