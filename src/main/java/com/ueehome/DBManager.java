@@ -1,7 +1,9 @@
 package com.ueehome;
 
+import com.mchange.v2.c3p0.ComboPooledDataSource;
+
+import java.beans.PropertyVetoException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
@@ -9,14 +11,14 @@ import java.sql.SQLException;
  * 数据库管理
  */
 class DBManager {
-    private static Connection connection;
+    private static ComboPooledDataSource comboPooledDataSource = new ComboPooledDataSource();
 
-    static void init(String url) throws ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        connection = DriverManager.getConnection(url);
+    static void init(String url) throws PropertyVetoException {
+        comboPooledDataSource.setDriverClass("com.mysql.cj.jdbc.Driver");
+        comboPooledDataSource.setJdbcUrl(url);
     }
 
-    static Connection getConection() {
-        return connection;
+    static Connection getConection() throws SQLException {
+        return comboPooledDataSource.getConnection();
     }
 }

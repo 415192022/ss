@@ -12,7 +12,7 @@ import static spark.Spark.*;
  * API
  */
 class API {
-    static void init(){
+    static void init() {
         port(8080);
 
         //全局前处理
@@ -34,7 +34,8 @@ class API {
             RegisterQQIOTLicenceData registerQQIOTLicenceData = new Manufacture().registerQQIOTLicence(password);
 
             QQIOTResponse qqiotResponse =
-                    new QQIOTResponse(registerQQIOTLicenceData.uid, registerQQIOTLicenceData.qqGuid, registerQQIOTLicenceData.qqLicence, 20);
+                    new QQIOTResponse(registerQQIOTLicenceData.uid, registerQQIOTLicenceData.qqGuid,
+                            registerQQIOTLicenceData.qqLicence, registerQQIOTLicenceData.remaining);
             return new Gson().toJson(qqiotResponse);
         });
 
