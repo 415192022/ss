@@ -33,10 +33,10 @@ class ErrorHandler {
 
         //POST /manufacture/qqiot/
         errorList.add(new UEEError(2002001, "缺少GUID"));
-        errorList.add(new UEEError(2002002, "缺少License"));
+        errorList.add(new UEEError(2002002, "缺少Licence"));
         errorList.add(new UEEError(2002003, "参数格式校验不通过"));
         errorList.add(new UEEError(2002004, "GUID不唯一"));
-        errorList.add(new UEEError(2002005, "License不唯一"));
+        errorList.add(new UEEError(2002005, "Licence不唯一"));
     }
 
     static String handlerErrorCode(Integer errorCode) {

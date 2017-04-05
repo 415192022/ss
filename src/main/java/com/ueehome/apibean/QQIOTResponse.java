@@ -14,9 +14,9 @@ public class QQIOTResponse {
     @SerializedName("qq_guid")
     @Expose
     public String qqGuid;
-    @SerializedName("qq_license")
+    @SerializedName("qq_licence")
     @Expose
-    public String qqLicense;
+    public String qqLicence;
     @SerializedName("remaining")
     @Expose
     public Integer remaining;
@@ -24,14 +24,14 @@ public class QQIOTResponse {
     /**
      * @param uid       产品唯一识别号
      * @param qqGuid    QQ物联GUID
-     * @param qqLicense QQ物联License
+     * @param qqLicence QQ物联Licence
      * @param remaining 剩余授权数量
      */
-    public QQIOTResponse(String uid, String qqGuid, String qqLicense, Integer remaining) {
+    public QQIOTResponse(String uid, String qqGuid, String qqLicence, Integer remaining) {
         super();
         this.uid = uid;
         this.qqGuid = qqGuid;
-        this.qqLicense = qqLicense;
+        this.qqLicence = qqLicence;
         this.remaining = remaining;
     }
 }
