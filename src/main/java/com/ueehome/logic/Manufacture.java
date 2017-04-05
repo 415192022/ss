@@ -1,6 +1,7 @@
 package com.ueehome.logic;
 
 import com.ueehome.logic.bean.RegisterQQIOTLicenseData;
+import com.ueehome.util.JDBCUtil;
 
 /**
  * Created by TangWei on 2017/3/27.
@@ -8,6 +9,8 @@ import com.ueehome.logic.bean.RegisterQQIOTLicenseData;
  */
 public class Manufacture {
     public RegisterQQIOTLicenseData registerQQIOTLicense() {
-        return null;
+        JDBCUtil jdbcUtil = new JDBCUtil();
+        jdbcUtil.init("Shanghai_VPN");
+        return new RegisterQQIOTLicenseData("1", "1", "1");
     }
 }

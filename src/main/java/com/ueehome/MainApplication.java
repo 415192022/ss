@@ -33,7 +33,6 @@ public class MainApplication {
                 throw halt(400, ErrorHandler.handlerErrorCode(2001002));
 
             RegisterQQIOTLicenseData registerQQIOTLicenseData = new Manufacture().registerQQIOTLicense();
-
             QQIOTResponse qqiotResponse =
                     new QQIOTResponse(registerQQIOTLicenseData.uid, registerQQIOTLicenseData.qqGuid, registerQQIOTLicenseData.qqLicense, 20);
             return new Gson().toJson(qqiotResponse);
