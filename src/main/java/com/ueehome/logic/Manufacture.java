@@ -59,7 +59,7 @@ public class Manufacture {
         return true;
     }
 
-    public QQIOTImportResponse importQQIOTLicence(String password, String data) throws SQLException, UEEException {
+    public void importQQIOTLicence(String password, String data) throws SQLException, UEEException {
         if (!Objects.equals(password, "&m9OBKlE2N5Z")) throw new UEEException(2002006);
         manufactureDataSource = new ManufactureDataSourceImpl();
         try {
@@ -73,8 +73,7 @@ public class Manufacture {
                 if (item.getQq_licence() == null || item.getQq_licence().isEmpty())
                     throw new UEEException(2002002); //缺少Licence
             }
-            Boolean result = manufactureDataSource.importQQIOTLicence(datalist);
-            return new QQIOTImportResponse(result.toString());
+            manufactureDataSource.importQQIOTLicence(datalist);
         } catch (SQLException e) {
             switch (e.getErrorCode()) {
                 case 1062:

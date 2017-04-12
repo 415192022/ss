@@ -43,8 +43,8 @@ class API {
         post("/v1/manufacture/qqiot/:password", (request, response) -> {
             String password = request.params(":password");
             String data = request.body();
-            QQIOTImportResponse qqiotImportResponse = new Manufacture().importQQIOTLicence(password,data);
-            return new Gson().toJson(qqiotImportResponse);
+            new Manufacture().importQQIOTLicence(password,data);
+            return halt(200);
         });
 
         //API结束-----------------------------------------------------------------------
