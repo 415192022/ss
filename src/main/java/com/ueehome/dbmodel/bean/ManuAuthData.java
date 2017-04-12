@@ -7,8 +7,8 @@ package com.ueehome.dbmodel.bean;
 public class ManuAuthData {
     public String pid;
     public String pidSub;
-    public Long prudDate;
-    public Long prudDeadline;
+    public Long prodDate;
+    public Long prodDeadline;
     public Integer count;
     public Integer usedCount;
     public Boolean enable;
@@ -18,17 +18,17 @@ public class ManuAuthData {
      *
      * @param pid          产品ID
      * @param pidSub       产品子ID
-     * @param prudDate     生产开始日期
-     * @param prudDeadline 生产截止日期
+     * @param prodDate     生产开始日期
+     * @param prodDeadline 生产截止日期
      * @param count        总数量
      * @param usedCount    已使用数量
      * @param enable       是否开启
      */
-    public ManuAuthData(String pid, String pidSub, Long prudDate, Long prudDeadline, Integer count, Integer usedCount, Boolean enable) {
+    public ManuAuthData(String pid, String pidSub, Long prodDate, Long prodDeadline, Integer count, Integer usedCount, Boolean enable) {
         this.pid = pid;
         this.pidSub = pidSub;
-        this.prudDate = prudDate;
-        this.prudDeadline = prudDeadline;
+        this.prodDate = prodDate;
+        this.prodDeadline = prodDeadline;
         this.count = count;
         this.usedCount = usedCount;
         this.enable = enable;

@@ -10,15 +10,15 @@ import java.sql.SQLException;
  * Created by TangWei on 2017/3/29.
  * 数据库管理
  */
-class DBManager {
+public class DBManager {
     private static ComboPooledDataSource comboPooledDataSource = new ComboPooledDataSource();
 
-    static void init(String url) throws PropertyVetoException {
+    public static void init(String url) throws PropertyVetoException {
         comboPooledDataSource.setDriverClass("com.mysql.cj.jdbc.Driver");
         comboPooledDataSource.setJdbcUrl(url);
     }
 
-    static Connection getConection() throws SQLException {
+    public static Connection getConection() throws SQLException {
         return comboPooledDataSource.getConnection();
     }
 }
