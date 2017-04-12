@@ -11,7 +11,7 @@ import static spark.Spark.halt;
  * Created by TangWei on 2017/3/27.
  * 错误处理器
  */
-class ErrorHandler {
+public class ErrorHandler {
     private static ArrayList<UEEError> errorList;
 
     static void init() {
@@ -35,11 +35,11 @@ class ErrorHandler {
         errorList.add(new UEEError(2002001, "缺少GUID"));
         errorList.add(new UEEError(2002002, "缺少Licence"));
         errorList.add(new UEEError(2002003, "参数格式校验不通过"));
-        errorList.add(new UEEError(2002004, "GUID不唯一"));
-        errorList.add(new UEEError(2002005, "Licence不唯一"));
+        errorList.add(new UEEError(2002004, "GUID或Licence不唯一"));
+        errorList.add(new UEEError(2002005, "一次批量插入不能超过1000条"));
     }
 
-    static String handlerErrorCode(Integer errorCode) {
+    public static String handlerErrorCode(Integer errorCode) {
         for (UEEError ueeError : errorList) {
             if (ueeError.errorCode.equals(errorCode))
                 return new Gson().toJson(ueeError);

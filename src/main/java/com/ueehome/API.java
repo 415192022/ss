@@ -1,6 +1,7 @@
 package com.ueehome;
 
 import com.google.gson.Gson;
+import com.ueehome.apibean.QQIOTImportResponse;
 import com.ueehome.apibean.QQIOTResponse;
 import com.ueehome.logic.Manufacture;
 import com.ueehome.logic.bean.RegisterQQIOTLicenceData;
@@ -39,7 +40,11 @@ class API {
             return new Gson().toJson(qqiotResponse);
         });
 
-        post("/v1/manufacture/qqiot", (request, response) -> "");
+        post("/v1/manufacture/qqiot", (request, response) -> {
+            String data = request.body();
+            QQIOTImportResponse qqiotImportResponse = new Manufacture().importQQIOTLicence(data);
+            return new Gson().toJson(qqiotImportResponse);
+        });
 
         //API结束-----------------------------------------------------------------------
 
