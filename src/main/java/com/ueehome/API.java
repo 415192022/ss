@@ -14,7 +14,7 @@ import static spark.Spark.*;
  */
 class API {
     static void init() {
-        port(8080);
+        port(4567);
 
         //全局前处理
         before((request, response) -> {
@@ -22,7 +22,7 @@ class API {
             if (request.requestMethod().equals("POST") || request.requestMethod().equals("PUT") || request.requestMethod().equals("DELETE")) {
                 String contentType = request.headers("Content-Type");
                 if (contentType == null || !contentType.equals("application/json"))
-                    throw halt(400, ErrorHandler.handlerErrorCode(1000004));
+                    throw new UEEException(1000004);
             }
         });
 
@@ -30,7 +30,7 @@ class API {
         get("/v1/manufacture/qqiot/:password", (request, response) -> {
             String password = request.params(":password");
             if (password.equals("123456"))
-                throw halt(400, ErrorHandler.handlerErrorCode(2001002));
+                throw new UEEException(2001002);
 
             RegisterQQIOTLicenceData registerQQIOTLicenceData = new Manufacture().registerQQIOTLicence(password);
 
@@ -50,8 +50,15 @@ class API {
 
         //全局后处理
         after((request, response) -> {
-            response.header("Content-Type", "application/json");
+            response.header("Content-Type", "application/json; charset=utf-8");
             response.header("Content-Encoding", "gzip");
+        });
+
+        exception(UEEException.class, (exception, request, response) -> {
+            response.header("Content-Type", "application/json; charset=utf-8");
+            response.header("Content-Encoding", "gzip");
+            response.status(400);
+            response.body(((UEEException) exception).getDetailJson());
         });
     }
 }

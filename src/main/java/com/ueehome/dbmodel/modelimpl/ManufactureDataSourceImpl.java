@@ -9,8 +9,6 @@ import com.ueehome.logic.bean.QQIOTBean;
 import java.sql.*;
 import java.util.UUID;
 
-import static spark.Spark.halt;
-
 /**
  * Created by TangWei on 2017/4/5.
  * ManufactureDataSourceImpl
@@ -106,8 +104,7 @@ public class ManufactureDataSourceImpl implements ManufactureDataSource {
             count = rs.getInt(6);
             usedCount = rs.getInt(7);
             enable = rs.getBoolean(8);
-        }
-        else conn.rollback();
+        } else conn.rollback();
         commit(conn, rs, stat);
         return new ManuAuthData(pid, pidSub, prodDate, prodDeadline, count, usedCount, enable);
     }
@@ -141,8 +138,7 @@ public class ManufactureDataSourceImpl implements ManufactureDataSource {
             }
         } catch (SQLException e) {
             throw e;
-        }
-        finally {
+        } finally {
             conn.close();
         }
 

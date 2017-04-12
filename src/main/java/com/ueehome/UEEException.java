@@ -8,11 +8,12 @@ import java.util.ArrayList;
 import static spark.Spark.halt;
 
 /**
- * Created by TangWei on 2017/3/27.
- * 错误处理器
+ * Created by TangWei on 2017/4/12.
+ * 异常
  */
-public class ErrorHandler {
+public class UEEException extends Exception {
     private static ArrayList<UEEError> errorList;
+    private Integer errorCode;
 
     static void init() {
         errorList = new ArrayList<>();
@@ -39,7 +40,12 @@ public class ErrorHandler {
         errorList.add(new UEEError(2002005, "一次批量插入不能超过1000条"));
     }
 
-    public static String handlerErrorCode(Integer errorCode) {
+    public UEEException(Integer errorCode) {
+        super(errorCode + "");
+        this.errorCode = errorCode;
+    }
+
+    public String getDetailJson() {
         for (UEEError ueeError : errorList) {
             if (ueeError.errorCode.equals(errorCode))
                 return new Gson().toJson(ueeError);
