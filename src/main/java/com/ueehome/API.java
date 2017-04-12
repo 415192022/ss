@@ -40,9 +40,10 @@ class API {
             return new Gson().toJson(qqiotResponse);
         });
 
-        post("/v1/manufacture/qqiot", (request, response) -> {
+        post("/v1/manufacture/qqiot/:password", (request, response) -> {
+            String password = request.params(":password");
             String data = request.body();
-            QQIOTImportResponse qqiotImportResponse = new Manufacture().importQQIOTLicence(data);
+            QQIOTImportResponse qqiotImportResponse = new Manufacture().importQQIOTLicence(password,data);
             return new Gson().toJson(qqiotImportResponse);
         });
 

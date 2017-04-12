@@ -11,6 +11,7 @@ import com.ueehome.logic.bean.QQIOTBean;
 import com.ueehome.logic.bean.RegisterQQIOTLicenceData;
 
 import java.sql.SQLException;
+import java.util.Objects;
 
 import static spark.Spark.halt;
 
@@ -58,7 +59,8 @@ public class Manufacture {
         return true;
     }
 
-    public QQIOTImportResponse importQQIOTLicence(String data) throws SQLException, UEEException {
+    public QQIOTImportResponse importQQIOTLicence(String password, String data) throws SQLException, UEEException {
+        if (!Objects.equals(password, "&m9OBKlE2N5Z")) throw new UEEException(2002006);
         manufactureDataSource = new ManufactureDataSourceImpl();
         try {
             QQIOTBean[] datalist = new Gson().fromJson(data, QQIOTBean[].class);

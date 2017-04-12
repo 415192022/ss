@@ -38,6 +38,8 @@ public class UEEException extends Exception {
         errorList.add(new UEEError(2002003, "参数格式校验不通过"));
         errorList.add(new UEEError(2002004, "GUID或Licence不唯一"));
         errorList.add(new UEEError(2002005, "一次批量插入不能超过1000条"));
+        errorList.add(new UEEError(2002006, "密码错误"));
+
     }
 
     public UEEException(Integer errorCode) {
