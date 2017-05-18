@@ -43,8 +43,12 @@ class API {
         post("/v1/manufacture/qqiot/:password", (request, response) -> {
             String password = request.params(":password");
             String data = request.body();
-            new Manufacture().importQQIOTLicence(password,data);
+            new Manufacture().importQQIOTLicence(password, data);
             return halt(200);
+        });
+
+        get("/v1/push", (request, response) -> {
+            return halt(200, new Manufacture().requestAliPush());
         });
 
         //API结束-----------------------------------------------------------------------
