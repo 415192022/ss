@@ -44,7 +44,7 @@ public class Manufacture {
                 throw new UEEException(2001007);//QQ物联授权已用完
             return new RegisterQQIOTLicenceData(productData.ueeID, productData.qqiotGUID, productData.qqiotLicence, manuAuthData.count - manuAuthData.usedCount);
         } else
-            throw halt(500);
+            throw new UEEException(2001003); //密码错误
     }
 
     private boolean validPassword(String password) throws SQLException, UEEException {
