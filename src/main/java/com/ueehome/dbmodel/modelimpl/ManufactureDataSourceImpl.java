@@ -35,7 +35,7 @@ public class ManufactureDataSourceImpl implements ManufactureDataSource {
         String qqiotGuid = null;
         String qqiotLicense = null;
 
-        String sql = "SELECT qqiot_licence.guid, qqiot_licence.licence, qqiot_licence.used, qqiot_licence.use_time FROM qqiot_licence WHERE used = 0 LIMIT 1";
+        String sql = "SELECT qqiot_licence.guid, qqiot_licence.licence, qqiot_licence.used, qqiot_licence.use_time FROM qqiot_licence WHERE used = 0 LIMIT 1 FOR UPDATE";
         if (conn.isClosed()) {
             conn = DBManager.getConection();
             conn.setAutoCommit(false);
