@@ -47,9 +47,6 @@ class API {
             return halt(200);
         });
 
-        get("/v1/push", (request, response) -> {
-            return halt(200, new Manufacture().requestAliPush());
-        });
 
         //API结束-----------------------------------------------------------------------
 
