@@ -63,7 +63,7 @@ public class ManufactureDataSourceImpl implements ManufactureDataSource {
             if (stat.executeUpdate() == 1) {
                 String updateQqIotSql = "UPDATE `uee`.`qqiot_licence` SET `used` = '1', `use_time` = ? WHERE (`guid` = ?) LIMIT 1";
                 PreparedStatement updateQqIotStat = conn.prepareStatement(updateQqIotSql);
-                updateQqIotStat.setLong(1, System.currentTimeMillis());
+                updateQqIotStat.setLong(1, System.currentTimeMillis() / 1000);
                 updateQqIotStat.setString(2, qqiotGuid);
 
                 if (updateQqIotStat.executeUpdate() == 1) {
