@@ -23,6 +23,8 @@ public class UEEException extends Exception {
         errorList.add(new UEEError(1000003, "服务器内部错误"));
         errorList.add(new UEEError(1000004, "POST PUT DELETE请求Content-Type错误"));
 
+
+
         //GET /manufacture/qqiot/:password
         errorList.add(new UEEError(2001001, "缺少password参数"));
         errorList.add(new UEEError(2001002, "password格式校验不通过"));
@@ -39,6 +41,7 @@ public class UEEException extends Exception {
         errorList.add(new UEEError(2002004, "GUID或Licence不唯一"));
         errorList.add(new UEEError(2002005, "一次批量插入不能超过1000条"));
         errorList.add(new UEEError(2002006, "密码错误"));
+
 
     }
 
