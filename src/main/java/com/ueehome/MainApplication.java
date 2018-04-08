@@ -9,18 +9,18 @@ import com.ueehome.aliiot.IotClient;
  */
 public class MainApplication {
 
-    private static final String dbUrl = "jdbc:mysql://192.168.100.100/uee?" +
-            "serverTimezone=UTC&" +
-            "characterEncoding=utf-8&" +
-            "user=uee&" +
-            "password=a12345."
-            ;
-
-//    private static final String dbUrl = "jdbc:mysql://rm-uf6l38iv9z5hs2gqfo.mysql.rds.aliyuncs.com/uee?" +
+//    private static final String dbUrl = "jdbc:mysql://192.168.100.100/uee?" +
 //            "serverTimezone=UTC&" +
 //            "characterEncoding=utf-8&" +
-//            "user=uee_api&" +
-//            "password=X5LATRRFA7h2";
+//            "user=uee&" +
+//            "password=a12345."
+//            ;
+
+    private static final String dbUrl = "jdbc:mysql://rm-uf6l38iv9z5hs2gqfo.mysql.rds.aliyuncs.com/uee?" +
+            "serverTimezone=UTC&" +
+            "characterEncoding=utf-8&" +
+            "user=uee_api&" +
+            "password=X5LATRRFA7h2";
 
     public static void main(String[] args) throws Exception {
         UEEException.init();

@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Class-Path: websocket-common-9.3.6.v20151106.jar slf4j-api-1.7.25.jar 
+ slf4j-simple-1.7.25.jar aliyun-java-sdk-push-3.1.0.jar jetty-util-9.3
+ .6.v20151106.jar jetty-http-9.3.6.v20151106.jar mysql-connector-java-
+ 6.0.6.jar jetty-security-9.3.6.v20151106.jar slf4j-api-1.7.13.jar jet
+ ty-servlet-9.3.6.v20151106.jar jetty-webapp-9.3.6.v20151106.jar jetty
+ -io-9.3.6.v20151106.jar spark-core-2.5.5.jar javax.servlet-api-3.1.0.
+ jar rxjava-1.3.6.jar websocket-servlet-9.3.6.v20151106.jar gson-2.6.2
+ .jar okio-1.11.0.jar log4j-1.2.17.jar okhttp-3.5.0.jar httpcore-4.4.1
+ .jar retrofit-2.1.0.jar fastjson-1.2.25.jar httpclient-4.4.1.jar comm
+ ons-codec-1.8.jar commons-codec-1.9.jar commons-lang3-3.4.jar hamcres
+ t-core-1.3.jar httpcore-nio-4.4.1.jar httpasyncclient-4.1.jar commons
+ -logging-1.1.3.jar aliyun-sdk-mns-1.1.8.4.jar reactive-streams-1.0.2.
+ jar aliyun-java-sdk-iot-4.0.0.jar aliyun-java-sdk-core-3.2.10.jar web
+ socket-server-9.3.6.v20151106.jar aliyun-java-sdk-core-2.4.2.jar jett
+ y-server-9.3.6.v20151106.jar mchange-commons-java-0.2.11.jar rxjava-2
+ .1.7.jar reactive-streams-1.0.1.jar gson-2.8.0.jar websocket-api-9.3.
+ 6.v20151106.jar websocket-client-9.3.6.v20151106.jar c3p0-0.9.5.2.jar
+  jetty-xml-9.3.6.v20151106.jar
+Main-Class: com.ueehome.MainApplication
+

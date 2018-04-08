@@ -14,7 +14,7 @@ public class GetWXLicence {
     public static void main(String[] args) {
         getWXLicenceSavaLocal();
     }
-    private static String token="8_4tlZeucK4ShJsqL45bkinWa6TcW_HYSbBkeQwxr2_6IvIbbapM0vSvegL7Ob3ZgIb9nDxcUZjS1qrqzqGHIhhfT5bR9v0ZjvOmXbU63YtIiQ2LRNLUNO5YFqV8rZx9J4FlASHzv6OHDtp9CRDYAeAEAZUW";
+    private static String token="8_yKFDYNzigWeBtxzv3wny8f-nBjjI8JhTZ6ZF7C00joX0iJFneMHcKXgDBWD9yfjfW2cBgYt-eKVYOWJ077lIqwdUlCT8bUwbxDql6ANuD_nideiPDo0tMgzjmnG1ZCL7K1UqbJ4xrTgueRK6KOLhABAYCZ";
     public static void getWXLicenceSavaLocal(){
         httpUtils.startGet("https://api.weixin.qq.com/device/getqrcode?access_token="+token+"&product_id=42355"
                 , new HttpUtils.OnGetWXLicenceCallBack() {

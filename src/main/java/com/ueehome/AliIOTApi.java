@@ -21,7 +21,7 @@ import static spark.Spark.*;
  * Created by uee on 2018/1/29.
  */
 public class AliIOTApi {
-    public static void init(){
+    public static void  init(){
         port(7410);
         //全局前处理
         before((request, response) -> {
